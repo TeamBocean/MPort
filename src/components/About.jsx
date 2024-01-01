@@ -23,7 +23,7 @@ const About = () => {
       animate={inView ? 'visible' : 'hidden'}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
     >
-      <div className="max-w-4xl mx-auto mt-[82px]" id='about'>
+      <div className="max-w-4xl mx-auto mt-[100px]" id='about'>
         <div className="text-center">
           <h2 className="text-3xl font-semibold mb-4 text-left title-animate">About Me</h2>
           <p className="mb-12 text-[16px] text-left text-gray-500 max-w-[800px]">
