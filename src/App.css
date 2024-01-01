@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Geist Sans";
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* Hero Styling */
+.tagline {
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.vertical-timeline::before {
+  background: linear-gradient(to bottom , #000000, #0000FF, #800080);
+}
+
+.typing {
+  border-right: 2px solid;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.Btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all .3s;
+  margin-top: -8px;
+  margin-bottom: 16px;
+  /* Add the animation on hover */
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all .3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: all .3s;
+}
+
+/* Define the bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Apply the bounce animation on hover */
+.Btn:hover {
+  animation: bounce 0.5s infinite;
+}
+
+
+
+
+
+.btn-container {
+  --color-text: #000;
+  --color-outline: #ff145b80;
+  --color-shadow: #00000080;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  padding: 5px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: 1s;
+  box-shadow: 0 0 0.2em 0 var(--color-background);
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  border-radius: 5px;
+
+}
+
+.btn-content:hover, .btn-content:focus {
+  transition: 0.5s;
+  -webkit-animation: btn-content 1s;
+  animation: btn-content 1s;
+  outline-offset: 0.2em;
+}
+
+.btn-content .icon-arrow {
+  transition: 0.5s;
+  margin-right: 0px;
+  transform: scale(0.6);
+}
+
+.btn-content:hover .icon-arrow {
+  transition: 0.5s;
+  margin-right: 25px;
+}
+
+.icon-arrow {
+  width: 20px;
+  margin-left: 15px;
+  position: relative;
+  top: 6%;
+}
+  
+/* SVG */
+#arrow-icon-one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+#arrow-icon-two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.btn-content:hover #arrow-icon-three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.btn-content:hover #arrow-icon-one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.btn-content:hover #arrow-icon-two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: var(--color-background);
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+/* Button animations */
+@-webkit-keyframes btn-content {
+  0% {
+    outline: 0.2em solid var(--color-background);
+    outline-offset: 0;
+  }
+}
+
+@keyframes btn-content {
+  0% {
+    outline: 0.2em solid var(--color-background);
+    outline-offset: 0;
+  }
+}
+
+.d-button {
+  display: flex;
+  align-items: center;
+  padding: 5px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: 1s;
+  box-shadow: 0 0 0.2em 0 var(--color-background);
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  border-radius: 5px;
+
+}
+
+/* Contact Styling */
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  transition: all 0.3s ease;
+  color: #000;;
+}
+
+
+
+
+.contact-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments can be made with media queries if needed */
+@media (max-width: 640px) {
+  .contact-section .flex {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-icon {
+    width: 50px; /* Smaller size on mobile */
+    height: 50px;
+  }
+}
+
+.card {
+  border: 2px solid black;
+
+}
+.card:hover {
+  animation: bounce 0.5s ease infinite;
+
+}
+
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.title-animate {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.scroll-to-top-button:hover {
+  animation: bounce 1s infinite;
+}
+
