@@ -7,7 +7,6 @@ import { skills } from '../constants';
 
 const Skills = () => {
   const sliderSettings = {
-    dots: true,
     infinite: true,
     speed: 3000,
     slidesToShow: 5,

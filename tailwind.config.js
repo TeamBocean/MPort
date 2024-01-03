@@ -12,6 +12,7 @@ export default {
         'custom-black': '#000000', 
         'custom-blue': '#0000FF', 
         'custom-purple': '#800080'
+        
       },
     },
   },
