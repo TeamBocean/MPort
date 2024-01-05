@@ -6,7 +6,7 @@ const Hero = () => {
 
   return (
     <section
-      className="mt-32 flex items-center justify-center bg-white dark:bg-gray-900"
+      className="flex items-center justify-center bg-white dark:bg-gray-900 min-h-screen"
       id="home"
     >
       <div className="grid max-w-screen-xl px-4 py-8 lg:py-16 lg:grid-cols-12 gap-8 w-full">
@@ -103,29 +103,7 @@ const Hero = () => {
               </span>
             </a>
 
-            <a
-              href={pdfFile}
-              className="cursor-pointer group relative flex gap-1.5 d-button"
-              download="Sample.pdf"
-            >
-              Download CV
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                height="24px"
-                width="24px"
-              >
-                <g
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                  stroke="#000"
-                >
-                  <path d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" />
-                </g>
-              </svg>
-            </a>
+            
           </div>
         </div>
 

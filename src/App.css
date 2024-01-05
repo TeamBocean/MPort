@@ -13,6 +13,15 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.color-letter {
+    font-weight: bold;
+    background: -webkit-linear-gradient( #0000FF, #800080);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Deprecated, but required for older browsers */
+  }
+
 
 
 

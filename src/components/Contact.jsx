@@ -1,45 +1,78 @@
-import { FaEnvelope, FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
-import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import {
+  IoMailOutline,
+  IoCallOutline,
+  IoLocationOutline,
+} from "react-icons/io5";
 
-function Contact() {
-  const { ref, inView } = useInView({
-    rootMargin: "-100px 0px",
-  });
-
-  const variants = {
-    visible: { opacity: 1, translateY: 0 },
-    hidden: { opacity: 0, translateY: 50 },
-  };
-
+export default function ContactSection() {
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={variants}
-      transition={{ duration: 0.8, ease: "easeInOut" }}
-    >
-      <section className="contact-section text-center py-12" id="contact">
-        <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
-        <p className="mb-8">
-          Drop Me A Message Via Any Of The Links Below To Get Started!
-        </p>
-        <div className="flex justify-center gap-8">
-          <a href="mailto:your-email@example.com" className="contact-icon">
-            <FaEnvelope className="text-4xl" />
-          </a>
-          <a href="https://t.me/yourusername" className="contact-icon">
-            <FaTelegramPlane className="text-4xl" />
-          </a>
-          <a href="https://wa.me/yourphonenumber" className="contact-icon">
-            <FaWhatsapp className="text-4xl" />
-          </a>
+    <div className=" text-black p-10 flex justify-center items-center" id="contact">
+      <div className="w-[500px]">
+        <div className="flex flex-col">
+          <div className="flex items-center mb-4">
+            <IoCallOutline size="1.5em" className="mr-4" />
+            <div>
+              <div className="font-semibold">Call Me</div>
+              <div>(087) 627 6005</div>
+            </div>
+          </div>
+          <div className="flex items-center mb-4">
+            <IoMailOutline size="1.5em" className="mr-4" />
+            <div>
+              <div className="font-semibold">Email Me</div>
+              <div>example@gmail.com</div>
+            </div>
+          </div>
+          <div className="flex items-center mb-4">
+            <IoLocationOutline size="1.5em" className="mr-4" />
+            <div>
+              <div className="font-semibold">Address</div>
+              <div>208 Trainer Avenue street, Illinois, UK - 62617.</div>
+            </div>
+          </div>
         </div>
-      </section>
-    </motion.div>
+      </div>
+
+      {/* Contact Form */}
+      <div className="p-10">
+        <h3 className=" font-semibold text-left text-blue-500 uppercase text-[14px]">
+          Get In Touch
+        </h3>
+        <h2 className="text-2xl text-left text-gray text-black mb-4 font-semibold">
+          Contact Me
+        </h2>
+        <form className="space-y-4">
+          <div className="flex space-x-4">
+            <input
+              type="text"
+              placeholder="Name"
+              className="flex-1 p-3 b text-black border border-gray-600 rounded-md focus:outline-none"
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              className="flex-1 p-3  text-black border border-gray-600 rounded-md focus:outline-none"
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Subject"
+            className="w-full p-3  text-black border border-gray-600 rounded-md focus:outline-none"
+          />
+          <textarea
+            placeholder="Message"
+            rows="4"
+            className="w-full p-3  text-black border border-gray-600 rounded-md focus:outline-none"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="w-[150px] p-3  bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 "
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
-
-export default Contact;

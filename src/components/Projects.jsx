@@ -1,134 +1,123 @@
-import React from 'react';
-import { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useState } from "react";
+import ArabicIreland from "../assets/imgs/ArabicIrelandHero.png";
+import { FaGithub, FaLocationArrow } from "react-icons/fa";
 
 const portfolioItems = [
   {
     id: 1,
-    title: 'BoddyBuddies',
-    description: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    imageUrl: '/path-to-your-project-image.jpg',
-    githubUrl: '#', // Replace with your GitHub URL
-    liveDemoUrl: '#' // Replace with your live demo URL
+    title: "Arabic Ireland",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore quod omnis, distinctio aliquam nesciunt facilis officia blanditiis esse velit ullam vel ipsa, voluptas dolorem eius fugiat molestiae quisquam quidem?",
+    imageUrl: ArabicIreland,
+    category: "website",
   },
-
   {
     id: 2,
-    title: 'FlashAlgo',
-    description: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    imageUrl: '/path-to-your-project-image.jpg',
-    liveDemoUrl: '#' // Replace with your live demo URL
+    title: "BodyBuddies Ireland",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore quod omnis, distinctio aliquam nesciunt facilis officia blanditiis esse velit ullam vel ipsa, voluptas dolorem eius fugiat molestiae quisquam quidem?",
+    imageUrl: ArabicIreland,
+    category: "app",
   },
-
   {
     id: 3,
-    title: 'MyTaxiIncome',
-    description: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    imageUrl: '/path-to-your-project-image.jpg',
-    githubUrl: '#', // Replace with your GitHub URL
-    liveDemoUrl: '#' // Replace with your live demo URL
+    title: "Kanafeh Kingz",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore quod omnis, distinctio aliquam nesciunt facilis officia blanditiis esse velit ullam vel ipsa, voluptas dolorem eius fugiat molestiae quisquam quidem?",
+    imageUrl: ArabicIreland,
+    category: "website",
   },
-
-
-  {
-    id: 4,
-    title: 'Pro Tillz',
-    description: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    imageUrl: '/path-to-your-project-image.jpg',
-    githubUrl: '#', // Replace with your GitHub URL
-    liveDemoUrl: '#' // Replace with your live demo URL
-  },
-
-  {
-    id: 5,
-    title: 'My Bookingz',
-    description: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    imageUrl: '/path-to-your-project-image.jpg',
-    githubUrl: '#', // Replace with your GitHub URL
-    liveDemoUrl: '#' // Replace with your live demo URL
-  },
-
-  {
-    id: 6,
-    title: 'Arabic Ireland',
-    description: 'lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    imageUrl: '/path-to-your-project-image.jpg',
-    githubUrl: '#', // Replace with your GitHub URL
-    liveDemoUrl: '#' // Replace with your live demo URL
-  },
- 
 ];
-
-const Portfolio = () => {
-    const [filter, setFilter] = useState('All');
-  
-    const filteredItems = portfolioItems.filter(item => {
-      switch(filter) {
-        case 'All':
-          return true;
-        case 'Apps':
-          return ['MyTaxiIncome', 'Pro Tillz', 'My Bookingz'].includes(item.title);
-        case 'Websites':
-          return ['BoddyBuddies', 'FlashAlgo', 'Arabic Ireland'].includes(item.title);
-        default:
-          return true;
-      }
-    });
-    
-    const { ref, inView } = useInView({
-      rootMargin: '-100px 0px',
-    });
-  
-    const variants = {
-      visible: { opacity: 1, translateY: 0 },
-      hidden: { opacity: 0, translateY: 50 },
-    };
-
+const PortfolioItem = ({ title, description, imageUrl }) => {
+  const handleClick = () => {
+    console.log(`Clicked on ${title}`);
+  };
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView ? 'visible' : 'hidden'}
-      variants={variants}
-      transition={{ duration: 0.8, ease: 'easeInOut' }}
+    <div
+      className="relative bg-white rounded-lg shadow-md overflow-hidden"
+      id="projects"
     >
-      <div className="py-16 px-4" id='projects'>
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-black mb-4">My Portfolio</h2>
-        <p className="mb-12 text-gray-600 max-w-2/3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam fugiat atque ipsum vitae iure consequuntur, officia aspernatur ipsam ut repellendus necessitatibus possimus a magnam labore, cupiditate excepturi neque. Ipsum, repellat!</p>
-        <div className="mb-10">
-          <button onClick={() => setFilter('All')} className="mx-2 px-4 py-2 border-2 border-black text-black rounded-lg focus:outline-none">All</button>
-          <button onClick={() => setFilter('Websites')} className="mx-2 px-4 py-2 border-2 border-black text-black  rounded-lg focus:outline-none">Websites</button>
-          <button onClick={() => setFilter('Apps')} className="mx-2 px-4 py-2 border-2 border-black text-black rounded-lg focus:outline-none">Apps</button>
+      <div className="relative group">
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-auto object-cover"
+        />
+        <div
+          className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+          onClick={handleClick}
+        >
+          <span className="text-white text-sm font-bold">Visit Page</span>
         </div>
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-bold mb-1">{title}</h3>
+        <p className="text-sm mb-2">{description}</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-  {filteredItems.map(item => (
-    <div key={item.id} className="border-2 border-black rounded-lg p-4">
-      <img src={item.imageUrl} alt={item.title} className="w-full h-50 object-cover mb-4 rounded" /> 
-      <h3 className="text-xl font-semibold text-left">{item.title}</h3>
-      <p className="text-gray-600 mb-4 text-left">{item.description}</p>
+        <div className="flex gap-2">
+          
+          <button className="border p-3 pl-4 text-center rounded-[5px] text-black flex gap-2 items-center font-semibold">
+          <FaGithub/> Github
+          </button>
 
-      <div className="flex gap-2">
-        <a href={item.githubUrl} className="flex items-center gap-2 px-4 py-2 border-2 border-black text-black rounded-lg focus:outline-none">
-            <FaGithub className="text-lg" /> <span>GitHub</span>
-        </a>
-        <a href={item.liveDemoUrl} className="flex items-center gap-2 px-4 py-2 border-2 border-black text-black rounded-lg focus:outline-none">
-            <span>Live Demo</span> <FaExternalLinkAlt className="text-lg" />
-        </a>
+          <button className=" border p-3 pl-4 text-center rounded-[5px] text-black flex gap-2 items-center font-semibold">
+            Live Demo
+            <FaLocationArrow />
+          </button>
+        </div>
       </div>
     </div>
-  ))}
-</div>
-
-      </div>
-    </div>
-
-    </motion.div>
-    
   );
 };
-
-export default Portfolio;
+const Work = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const filteredItems = portfolioItems.filter((item) => {
+    if (activeCategory === "all") return true;
+    return item.category === activeCategory;
+  });
+  return (
+    <section className="container mx-auto p-6" id="portfolio">
+      <h3 className=" font-semibold text-center text-blue-500 mb-2 uppercase text-[14px]">
+        Portfolio
+      </h3>
+      <h2 className="text-2xl text-center text-gray text-black mb-2 font-semibold">
+        Recent Work
+      </h2>
+      <div className="text-center mb-4 font-semibold text-[18px] ">
+        <button
+          onClick={() => setActiveCategory("all")}
+          className={`px-4 py-2 m-2 ${
+            activeCategory === "all"
+              ? "bg-blue-500 text-white border rounded-[5px]"
+              : "bg-white text-black border rounded-[5px]"
+          }`}
+        >
+          All
+        </button>
+        <button
+          onClick={() => setActiveCategory("website")}
+          className={`px-4 py-2 m-2 ${
+            activeCategory === "website"
+              ? "bg-blue-500 text-white border rounded-[5px]"
+              : "bg-white text-black border rounded-[5px] "
+          }`}
+        >
+          Website
+        </button>
+        <button
+          onClick={() => setActiveCategory("app")}
+          className={`px-4 py-2 m-2 ${
+            activeCategory === "app"
+              ? "bg-blue-500 text-white border rounded-[5px]"
+              : "bg-white text-black border rounded-[5px]"
+          }`}
+        >
+          Apps
+        </button>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {filteredItems.map((item) => (
+          <PortfolioItem key={item.id} {...item} />
+        ))}
+      </div>
+    </section>
+  );
+};
+export default Work;

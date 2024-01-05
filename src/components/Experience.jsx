@@ -58,14 +58,17 @@ const ExperienceCard = ({ experience }) => {
 
 const Experience = () => {
   return (
-    <>
+    <div className="">
       <motion.div variants={textVariant()}>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
+        <h3 className="font-semibold text-center text-blue-500 mb-2 uppercase text-[18px]">
+          My Journey
+        </h3>
+        <h2 className="text-2xl text-center text-gray text-black mb-2 font-semibold">
           Work Experience
         </h2>
       </motion.div>
 
-      <div className="mt-4 flex flex-col">
+      <div className="mt-4 flex flex-col" id="experiences">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
@@ -75,7 +78,7 @@ const Experience = () => {
           ))}
         </VerticalTimeline>
       </div>
-    </>
+    </div>
   );
 };
 

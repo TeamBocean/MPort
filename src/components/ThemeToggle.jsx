@@ -6,7 +6,7 @@ const ThemeToggle = () => {
     const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
     // Set the initial icon state
-    if (localStorage.getItem('color-theme') === 'dark' || 
+    if (localStorage.getItem('color-theme') === 'dark' ||
        (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       themeToggleLightIcon && themeToggleLightIcon.classList.remove('hidden');
     } else {
@@ -15,7 +15,7 @@ const ThemeToggle = () => {
 
     // Define the toggle function
     const toggleTheme = () => {
-      const isDarkMode = localStorage.getItem('color-theme') === 'dark' || 
+      const isDarkMode = localStorage.getItem('color-theme') === 'dark' ||
                          (!('color-theme' in localStorage) && document.documentElement.classList.contains('dark'));
 
       if (isDarkMode) {
