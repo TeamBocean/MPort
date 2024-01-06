@@ -73,10 +73,10 @@ const Work = () => {
     return item.category === activeCategory;
   });
   return (
-    <section className="container mx-auto p-6" id="portfolio">
-      <h3 className=" font-semibold text-center text-blue-500 mb-2 uppercase text-[14px]">
-        Portfolio
-      </h3>
+    <section className="container mx-auto p-6 mt-20" id="portfolio">
+      <h3 className="font-semibold text-center text-blue-500 uppercase text-[16px]">
+          Portfolio
+        </h3>
       <h2 className="text-2xl text-center text-gray text-black mb-2 font-semibold">
         Recent Work
       </h2>

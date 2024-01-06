@@ -1,5 +1,6 @@
 import HeroImage from "../assets/imgs/MHERO-2.png";
 import { TypeAnimation } from "react-type-animation";
+import { skills } from "../constants";
 
 const Hero = () => {
   const pdfFile = "./file/Sample.pdf";
@@ -102,9 +103,47 @@ const Hero = () => {
                 </svg>
               </span>
             </a>
-
+            <a
+            href={pdfFile}
+            className="cursor-pointer group relative flex gap-1.5 d-button"
+            download="Sample.pdf"
+          >
+            Download CV
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              height="24px"
+              width="24px"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2"
+                stroke="#000"
+              >
+                <path d="M6 21H18M12 3V17M12 17L17 12M12 17L7 12" />
+              </g>
+            </svg>
+          </a>
             
           </div>
+          <div  className="custom-slider flex gap-1 mt-2">
+        {skills.map((skill) => (
+          <div
+            key={skill.name}
+            className="p-4 cursor-pointer"
+            
+          >
+            <img
+              src={skill.Image}
+              alt={skill.name}
+              className="mx-auto transition duration-300 ease-in-out"
+            />
+          </div>
+        ))}
+      </div>
+          
         </div>
 
         <div className="lg:col-span-8 xl:col-span-5 flex justify-center">
