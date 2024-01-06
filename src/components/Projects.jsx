@@ -24,6 +24,32 @@ const portfolioItems = [
     imageUrl: ArabicIreland,
     category: "website",
   },
+
+  {
+    id: 4,
+    title: "Pillars",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore quod omnis, distinctio aliquam nesciunt facilis officia blanditiis esse velit ullam vel ipsa, voluptas dolorem eius fugiat molestiae quisquam quidem?",
+    imageUrl: ArabicIreland,
+    category: "app",
+  },
+
+  {
+    id: 5,
+    title: "FlashAlgo",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore quod omnis, distinctio aliquam nesciunt facilis officia blanditiis esse velit ullam vel ipsa, voluptas dolorem eius fugiat molestiae quisquam quidem?",
+    imageUrl: ArabicIreland,
+    category: "website",
+  },
+
+  {
+    id: 6,
+    title: "Protillz",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore quod omnis, distinctio aliquam nesciunt facilis officia blanditiis esse velit ullam vel ipsa, voluptas dolorem eius fugiat molestiae quisquam quidem?",
+    imageUrl: ArabicIreland,
+    category: "app",
+  },
+
+
 ];
 const PortfolioItem = ({ title, description, imageUrl }) => {
   const handleClick = () => {

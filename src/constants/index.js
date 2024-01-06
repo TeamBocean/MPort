@@ -1,7 +1,7 @@
-import starbucks from "../assets/imgs/starbucks.png";
-import tesla from "../assets/imgs/tesla.png";
+import r3 from "../assets/imgs/r3logo.png";
+import Pillars from "../assets/imgs/PillarsIcon.png";
 import shopify from "../assets/imgs/shopify.png";
-import Kolin from "../assets/imgs/Kolin.png";
+import Kotlin from "../assets/imgs/Kolin.png";
 import Java from "../assets/imgs/Java.png";
 import Dart from "../assets/imgs/Dart.png";
 import Flutter from "../assets/imgs/Flutter.png";
@@ -16,10 +16,10 @@ import Node from "../assets/imgs/Node.png";
 
 const experiences = [
   {
-    title: "Title Of Job",
+    title: "Software Engineer 1",
     company_name: "R3",
-    icon: starbucks,
-    iconBg: "#383E56",
+    icon: r3,
+    iconBg: "#fff",
     date: "September 2022 - Present",
     points: [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -27,11 +27,12 @@ const experiences = [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     ],
   },
+
   {
-    title: "Title Of Job",
+    title: "Flutter Developer",
     company_name: "Pillars",
-    icon: tesla,
-    iconBg: "#E6DEDD",
+    icon: Pillars,
+    iconBg: "#fff",
     date: "November 2022 - Present",
     points: [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -39,11 +40,12 @@ const experiences = [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     ],
   },
+
   {
-    title: "Title Of Job",
+    title: "Co - Founder",
     company_name: "FlashAlgo",
     icon: shopify,
-    iconBg: "#383E56",
+    iconBg: "#fff",
     date: "September 2021 - Present",
     points: [
       "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -57,7 +59,7 @@ const experiences = [
 const skills = [
   {
     name: "Kotlin",
-    Image: Kolin,
+    Image: Kotlin,
     width: 80,
     height: 80,
   },
@@ -117,13 +119,6 @@ const skills = [
     width: 80,
     height: 80,
   },
-
-  // {
-  //   name: "Corda",
-  //   Image: "https://img.icons8.com/color/48/000000/python--v1.png",
-  //   width: 80,
-  //   height: 80,
-  // },
 
 
 ];
