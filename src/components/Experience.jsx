@@ -3,23 +3,26 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
+import { Element } from "react-scroll";
 
 import "react-vertical-timeline-component/style.min.css";
 
-import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-const ExperienceCard = ({ experience }) => {
+
+const ExperienceCard = ({ experience, isDarkMode }) => {
+  const contentStyle = {
+  };
+
+  const contentArrowStyle = {
+  };
+  
   return (
     <VerticalTimelineElement
-      contentStyle={{
-        background: "white",
-        color: "black",
-        border: "2px solid black",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid black" }}
+      contentStyle= {contentStyle}
+      contentArrowStyle= {contentArrowStyle}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -33,12 +36,12 @@ const ExperienceCard = ({ experience }) => {
       }
     >
       <div>
-        <h3 className="text-black text-[24px] font-bold">{experience.title}</h3>
+        <h3 className="text-black text-[24px] font-bold dark:text-white">{experience.title}</h3>
         <p
-          className="text-secondary text-[16px] font-semibold"
+          className="text-secondary text-[16px] font-semibold dark:text-white"
           style={{ margin: 0 }}
         >
-          {experience.company_name}
+          {experience.company_name} 
         </p>
       </div>
 
@@ -46,7 +49,7 @@ const ExperienceCard = ({ experience }) => {
         {experience.points.map((point, index) => (
           <li
             key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
+            className="text-white-100 text-[14px] pl-1 tracking-wider dark:text-white"
           >
             {point}
           </li>
@@ -56,29 +59,36 @@ const ExperienceCard = ({ experience }) => {
   );
 };
 
-const Experience = () => {
+
+
+
+
+const Experience = ({ isDarkMode }) => {
   return (
+    <Element name="experiences">
     <div className="">
       <motion.div variants={textVariant()}>
         <h3 className="font-semibold text-center text-blue-500 mb-2 uppercase text-[18px]">
           My Journey
         </h3>
-        <h2 className="text-2xl text-center text-gray text-black mb-2 font-semibold">
+        <h2 className="text-2xl text-center text-gray text-black mb-2 font-semibold dark:text-white">
           Work Experience
         </h2>
       </motion.div>
 
-      <div className="mt-4 flex flex-col" id="experiences">
+      <div className="mt-4 flex flex-col">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}
               experience={experience}
+              isDarkMode={isDarkMode}
             />
           ))}
         </VerticalTimeline>
       </div>
     </div>
+    </Element>
   );
 };
 

@@ -57,7 +57,7 @@ const PortfolioItem = ({ title, description, imageUrl }) => {
   };
   return (
     <div
-      className="relative bg-white rounded-lg shadow-md overflow-hidden"
+      className="relative bg-white rounded-lg shadow-md border overflow-hidden dark:bg-[#161616] dark:border-white"
       id="projects"
     >
       <div className="relative group">
@@ -74,16 +74,16 @@ const PortfolioItem = ({ title, description, imageUrl }) => {
         </div>
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-bold mb-1">{title}</h3>
-        <p className="text-sm mb-2">{description}</p>
+        <h3 className="text-lg font-bold mb-1 dark:text-white">{title}</h3>
+        <p className="text-sm mb-2 dark:text-white ">{description}</p>
 
         <div className="flex gap-2">
           
-          <button className="border p-3 pl-4 text-center rounded-[5px] text-black flex gap-2 items-center font-semibold">
+          <button className="dark:text-white border p-3 pl-4 text-center rounded-[5px] text-black flex gap-2 items-center font-semibold">
           <FaGithub/> Github
           </button>
 
-          <button className=" border p-3 pl-4 text-center rounded-[5px] text-black flex gap-2 items-center font-semibold">
+          <button className=" border p-3 pl-4 text-center rounded-[5px] text-black dark:text-white flex gap-2 items-center font-semibold">
             Live Demo
             <FaLocationArrow />
           </button>
@@ -103,25 +103,26 @@ const Work = () => {
       <h3 className="font-semibold text-center text-blue-500 uppercase text-[16px]">
           Portfolio
         </h3>
-      <h2 className="text-2xl text-center text-gray text-black mb-2 font-semibold">
+      <h2 className="text-2xl text-center dark:text-white text-black mb-2 font-semibold">
         Recent Work
       </h2>
+
       <div className="text-center mb-4 font-semibold text-[18px] ">
         <button
           onClick={() => setActiveCategory("all")}
-          className={`px-4 py-2 m-2 ${
+          className={`px-4 py-2 m-2 dark:bg-[#161616] dark:text-white ${
             activeCategory === "all"
-              ? "bg-blue-500 text-white border rounded-[5px]"
-              : "bg-white text-black border rounded-[5px]"
+              ? "bg-blue-500 text-white border rounded-[5px] dark:bg-blue-500 dark:border-black "
+              : "bg-white text-black border rounded-[5px] "
           }`}
         >
           All
         </button>
         <button
           onClick={() => setActiveCategory("website")}
-          className={`px-4 py-2 m-2 ${
+          className={`px-4 py-2 m-2 dark:bg-[#161616] dark:text-white ${
             activeCategory === "website"
-              ? "bg-blue-500 text-white border rounded-[5px]"
+              ? "bg-blue-500 text-white border rounded-[5px] dark:bg-blue-500 dark:border-black "
               : "bg-white text-black border rounded-[5px] "
           }`}
         >
@@ -129,9 +130,9 @@ const Work = () => {
         </button>
         <button
           onClick={() => setActiveCategory("app")}
-          className={`px-4 py-2 m-2 ${
+          className={`px-4 py-2 m-2 dark:bg-[#161616] dark:text-white ${
             activeCategory === "app"
-              ? "bg-blue-500 text-white border rounded-[5px]"
+              ? "bg-blue-500 text-white border rounded-[5px] dark:bg-blue-500 dark:border-black "
               : "bg-white text-black border rounded-[5px]"
           }`}
         >

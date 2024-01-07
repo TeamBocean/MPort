@@ -15,9 +15,10 @@ import "@fontsource/geist-sans";
 
 
 
+
 function App() {
   return (
-      <div>
+      <div className='dark:bg-[#161616]'>
         <Nav />
         <ThemeToggle />
         <Hero />

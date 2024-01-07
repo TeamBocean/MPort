@@ -32,6 +32,33 @@ html {
   background: black;
 }
 
+.dark .vertical-timeline::before {
+  background: white;
+}
+
+.dark .vertical-timeline-element-date {
+  color: lightblue;
+}
+
+.dark .vertical-timeline-element-content {
+  background-color: #161616;
+  border: 2px solid white;
+}
+
+.vertical-timeline-element-content {
+  border: black 2px solid;
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid black;
+}
+
+.dark .vertical-timeline-element-content-arrow {
+  border-right: 7px solid white;
+}
+
+
+
 /* .typing {
   border-right: 2px solid;
   animation: blink 0.75s step-end infinite;
